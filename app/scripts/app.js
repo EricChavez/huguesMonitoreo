@@ -18,7 +18,7 @@ angular
 		'ngNotify',
 	])
 	.config(['$provide', '$urlRouterProvider', '$httpProvider', 'cfpLoadingBarProvider', '$qProvider', 'blockUIConfig', function($provide, $urlRouterProvider, $httpProvider, cfpLoadingBarProvider, $qProvider, blockUIConfig) {
-		$urlRouterProvider.otherwise('/');
+		$urlRouterProvider.otherwise('/main');
 		cfpLoadingBarProvider.includeSpinner = false;
 		$qProvider.errorOnUnhandledRejections(false);
 		$provide.factory('ErrorHttpInterceptor', function($q, $injector) {

@@ -6,13 +6,13 @@ angular.module('huguesApp')
 				data: {
 					pageTitle: 'BIENVENIDO | MONITOREO SOFTV',
 				},
-				url: '/',
+				url: '/main',
 				templateUrl: 'views/main.html',
 				controller: 'MainCtrl',
 				controllerAs: '$ctrl'
 			},
 			{
-				name: 'diagnostic',
+				name: 'home.diagnostic',
 				data: {
 					pageTitle: 'BIENVENIDO | MONITOREO SOFTV',
 				},
@@ -22,7 +22,7 @@ angular.module('huguesApp')
 				controllerAs: '$ctrl'
 			},
 			{
-				name: 'onsiteOne',
+				name: 'home.onsiteOne',
 				data: {
 					pageTitle: 'BIENVENIDO | MONITOREO SOFTV',
 				},
@@ -32,7 +32,7 @@ angular.module('huguesApp')
 				controllerAs: '$ctrl'
 			},
 			{
-				name: 'onsiteTwo',
+				name: 'home.onsiteTwo',
 				data: {
 					pageTitle: 'BIENVENIDO | MONITOREO SOFTV',
 				},

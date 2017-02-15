@@ -6,7 +6,7 @@
       <ul class="header-nav header-nav-options">
         <li class="header-nav-brand">
           <div class="brand-holder">
-            <a>
+            <a ui-sref="home">
               <img src="images/logo.png"><span class="text-lg text-bold text-primary">MONITOREO</span>
             </a>
           </div>
@@ -73,20 +73,20 @@
       <ul id="main-menu" class="gui-controls">
 
         <!-- BEGIN DASHBOARD -->
-        <li ui-sref="cajas" ui-sref-active="active">
-          <a ui-sref="cajas" ui-sref-active="active" ng-click="ctrl.ocultaNotify()">
+        <li ui-sref="home.diagnostic" ui-sref-active="active">
+          <a ui-sref="home.diagnostic" ui-sref-active="active">
             <div class="gui-icon"><i class="fa fa-hdd-o"></i></div>
             <span class="title">Site Diagnostic Tool</span>
           </a>
         </li>
-        <li ui-sref="ventas" ui-sref-active="active">
-          <a ui-sref="ventas" ui-sref-active="active" ng-click="ctrl.ocultaNotify()">
+        <li ui-sref="home.onsiteOne" ui-sref-active="active">
+          <a ui-sref="home.onsiteOne" ui-sref-active="active">
             <div class="gui-icon"><i class="fa fa-info-circle"></i></div>
             <span class="title">OnSite Validation Tool 1</span>
           </a>
         </li>
-        <li ui-sref="ventas" ui-sref-active="active">
-          <a ui-sref="ventas" ui-sref-active="active" ng-click="ctrl.ocultaNotify()">
+        <li ui-sref="home.onsiteTwo" ui-sref-active="active">
+          <a ui-sref="home.onsiteTwo" ui-sref-active="active">
             <div class="gui-icon"><i class="fa fa-globe"></i></div>
             <span class="title">OnSite Validation Tool 2</span>
           </a>
