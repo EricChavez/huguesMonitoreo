@@ -2,11 +2,8 @@
 angular.module('huguesApp')
 	.service('globalService', function() {
 		var svc = {};
-
-		svc.getUrlHugues = function() {;
-			return 'http://localhost:50914/api';
+		svc.getUrl = function() {
+			return 'http://192.168.50.60:5000/api';
 		};
-
-
 		return svc;
 	});
