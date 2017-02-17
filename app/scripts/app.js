@@ -16,6 +16,7 @@ angular
 		'blockUI',
 		'angular-loading-bar',
 		'ngNotify',
+		'ngMap'
 	])
 	.config(['$provide', '$urlRouterProvider', '$httpProvider', 'cfpLoadingBarProvider', '$qProvider', 'blockUIConfig', function($provide, $urlRouterProvider, $httpProvider, cfpLoadingBarProvider, $qProvider, blockUIConfig) {
 		$urlRouterProvider.otherwise('/main');
@@ -44,6 +45,7 @@ angular
 		});
 		$httpProvider.interceptors.push('ErrorHttpInterceptor');
 		$httpProvider.defaults.headers.post['Content-Type'] = 'application/json; charset=utf-8';
+		$httpProvider.defaults.headers.post['Accept'] = 'application/json';
 		delete $httpProvider.defaults.headers.common['X-Requested-With'];
 	}])
 	.constant('APP_CONFIG', window.appConfig)
