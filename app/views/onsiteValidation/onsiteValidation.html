@@ -1,0 +1,233 @@
+<div class="card" style="margin-top:20px;">
+  <div class="card-head style-default-light" style="padding-top:10px; padding-left:10px;">
+    <header>
+      <strong style="font-weight:bold; border:none; margin-left:10px;">HughesNet</strong>
+      <br /><small class="text-muted" style="font-size:14px; margin-left:10px;">TDS/Jupiter-Onsite Validation Tool (1 of 3)</small>
+    </header>
+  </div>
+  <div class="row text-center">
+      <h4><a href="#" style="color: #0aa89e;">Step 1: Verify FSO and Site Information</a></h4>
+  </div>
+  <div class="row text-center">
+      <button type="button" class="btn btn-default" name="button" ng-click="$ctrl.getToken()">Refresh Site Info</button>
+      <button type="button" class="btn btn-default" name="button">Ping Terminal</button>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+        <div class="col-md-6 text-right">
+            <p><strong>FSO:</strong></p>
+
+        </div>
+        <div class="col-md-6 text-left" style="margin-left:-20px;">
+            <p>-----------</p>
+        </div>
+        <div class="col-md-6 text-right" style="margin-top: -10px;">
+            <p><strong>Visit Type:</strong></p>
+
+        </div>
+        <div class="col-md-6 text-left" style="margin-left:-20px; margin-top: -10px;">
+            <p>-----------</p>
+        </div>
+        <div class="col-md-6 text-right" style="margin-top: -10px;">
+            <p><strong>Installer Id:</strong></p>
+
+        </div>
+        <div class="col-md-6 text-left" style="margin-left:-20px; margin-top: -10px;">
+            <p>-----------</p>
+        </div>
+        <div class="col-md-6 text-right" style="margin-top: -10px;">
+            <p><strong>Installer Name:</strong></p>
+
+        </div>
+        <div class="col-md-6 text-left" style="margin-left:-20px; margin-top: -10px;">
+            <p>-----------</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="col-md-6 text-right" >
+            <p><strong>SAN:</strong></p>
+
+        </div>
+        <div class="col-md-6 text-left" style="margin-left:-20px;">
+            <p>-----------</p>
+        </div>
+        <div class="col-md-6 text-right" style="margin-top: -10px;">
+            <p><strong>Serial#:</strong></p>
+
+        </div>
+        <div class="col-md-6 text-left" style="margin-left:-20px; margin-top: -10px;">
+            <p>-----------</p>
+        </div>
+        <div class="col-md-6 text-right" style="margin-top: -10px;">
+            <p><strong>Adapter Type:</strong></p>
+
+        </div>
+        <div class="col-md-6 text-left" style="margin-left:-20px; margin-top: -10px;">
+            <p>-----------</p>
+        </div>
+        <div class="col-md-6 text-right" style="margin-top: -10px;">
+            <p><strong>Gateway Id:</strong></p>
+
+        </div>
+        <div class="col-md-6 text-left" style="margin-left:-20px; margin-top: -10px;">
+            <p>-----------</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="col-md-6 text-right">
+            <p><strong>Latitude:</strong></p>
+
+        </div>
+        <div class="col-md-6 text-left" style="margin-left:-20px;">
+            <p>-----------</p>
+        </div>
+        <div class="col-md-6 text-right" style="margin-top: -10px;">
+            <p><strong>Longitude:</strong></p>
+
+        </div>
+        <div class="col-md-6 text-left" style="margin-left:-20px; margin-top: -10px;">
+            <p>-----------</p>
+        </div>
+        <div class="col-md-6 text-right" style="margin-top: -10px;">
+            <p><strong>UL/DL Group:</strong></p>
+
+        </div>
+        <div class="col-md-6 text-left" style="margin-left:-20px; margin-top: -10px;">
+            <p>-----------</p>
+        </div>
+        <div class="col-md-6 text-right" style="margin-top: -10px;">
+            <p><strong>Beam Id:</strong></p>
+
+        </div>
+        <div class="col-md-6 text-left" style="margin-left:-20px; margin-top: -10px;">
+            <p>-----------</p>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="col-md-6 text-right">
+            <p><strong>Repl IDU ESN:</strong></p>
+
+        </div>
+        <div class="col-md-6 text-left" style="margin-left:-20px;">
+            <p>-----------</p>
+        </div>
+        <div class="col-md-6 text-right" style="margin-top: -10px;">
+            <p><strong>Repl ODU ESN:</strong></p>
+
+        </div>
+        <div class="col-md-6 text-left" style="margin-left:-20px; margin-top: -10px;">
+            <p>-----------</p>
+        </div>
+        <div class="col-md-6 text-right" style="margin-top: -10px;">
+            <p><strong>Antenna Part#:</strong></p>
+
+        </div>
+        <div class="col-md-6 text-left" style="margin-left:-20px; margin-top: -10px;">
+            <p>-----------</p>
+        </div>
+        <div class="col-md-6 text-right" style="margin-top: -10px;">
+            <p><strong>Company Type:</strong></p>
+
+        </div>
+        <div class="col-md-6 text-left" style="margin-left:-20px; margin-top: -10px;">
+            <p>-----------</p>
+        </div>
+    </div>
+  </div>
+  <hr>
+  <br>
+  <div class="row text-center">
+        <div class="col-md-6">
+            <h4><a href="#" style="color: #0aa89e;">Step 2: Choose The Antenna Size That You Will Install</a></h4>
+            <div class="row">
+                <div class="col-md-6 text-right">
+                    <label class="radio-inline radio-styled">
+                        <input type="radio" name="antenna" ng-model="$ctrl.antenna">
+                    </label>
+                </div>
+                <div class="col-md-6 text-left">
+                    <span>.69 m</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-right">
+                    <label class="radio-inline radio-styled">
+                        <input type="radio" name="antenna" ng-model="$ctrl.antenna">
+                    </label>
+                </div>
+                <div class="col-md-6 text-left">
+                    <span>.74 m</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-right">
+                    <label class="radio-inline radio-styled">
+                        <input type="radio" name="antenna" ng-model="$ctrl.antenna">
+                    </label>
+                </div>
+                <div class="col-md-6 text-left">
+                    <span>.98 m</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-right">
+                    <label class="radio-inline radio-styled">
+                        <input type="radio" name="antenna" ng-model="$ctrl.antenna">
+                    </label>
+                </div>
+                <div class="col-md-6 text-left">
+                    <span>1.2 m</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h4><a href="#" style="color: #0aa89e;">Step 3: Choose The Mount Type That You Will Install</a></h4>
+            <div class="row">
+                <div class="col-md-6 text-right">
+                    <label class="radio-inline radio-styled">
+                        <input type="radio" name="mount" ng-model="$ctrl.mount">
+                    </label>
+                </div>
+                <div class="col-md-6 text-left">
+                    <span>Tri-Mast (Roof)</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-right">
+                    <label class="radio-inline radio-styled">
+                        <input type="radio" name="mount" ng-model="$ctrl.mount">
+                    </label>
+                </div>
+                <div class="col-md-6 text-left">
+                    <span>Tri-Mast (Wall)</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-right">
+                    <label class="radio-inline radio-styled">
+                        <input type="radio" name="mount" ng-model="$ctrl.mount">
+                    </label>
+                </div>
+                <div class="col-md-6 text-left">
+                    <span>Pole</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 text-right">
+                    <label class="radio-inline radio-styled">
+                        <input type="radio" name="mount" ng-model="$ctrl.mount">
+                    </label>
+                </div>
+                <div class="col-md-6 text-left">
+                    <span>Non Penetrating</span>
+                </div>
+            </div>
+        </div>
+  </div>
+  <hr>
+  <br>
+  <div class="row text-center">
+      <button type="button" class="btn btn-default" name="button">Proceed</button>
+  </div>
+  <br>
+</div>
