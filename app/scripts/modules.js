@@ -28,7 +28,7 @@ angular.module('huguesApp')
 				},
 				url: '/onsite/one',
 				templateUrl: 'views/onsiteValidation/onsiteValidation.html',
-				controller: 'OnsiteValidationCtrl',
+				controller: 'OVTCtrl',
 				controllerAs: '$ctrl'
 			},
 			{
@@ -38,7 +38,7 @@ angular.module('huguesApp')
 				},
 				url: '/onsite/two',
 				templateUrl: 'views/diagnostic/ValidationTool2.html',
-				controller: 'ValidationTool2Ctrl',
+				controller: 'OVTctrl',
 				controllerAs: '$ctrl'
 			}
 		];
