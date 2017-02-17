@@ -1,0 +1,125 @@
+<style>
+  .font-reduced {
+    font-size: 8px;
+  }
+</style>
+
+
+
+<div class="card" style="margin-top:10px;">
+  <div class="card-head card-head-xs style-info">
+    <header>TDS/Jupiter On-Site Validation Tool (2 of 3)</header>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-3 form-group">
+        <div class="col-md-6"><b><small class="font-reduced">SAN</small></b></div>
+        <div class="col-md-6"><small class="font-reduced">{{$ctrl.dataDTS.SAN}}</small></div>
+        <div class="col-md-6"><b><small class="font-reduced">Adapter type</small></b></div>
+        <div class="col-md-6"><small class="font-reduced">{{$ctrl.dataDTS.Adapter_Type}}</small></div>
+        <div class="col-md-6"><b><small class="font-reduced">Gateway ID</small></b></div>
+        <div class="col-md-6"><small class="font-reduced">{{$ctrl.dataDTS.GW_ID}}</small></div>
+        <div class="col-md-6"><b><small class="font-reduced">Beam ID</small></b></div>
+        <div class="col-md-6"><small class="font-reduced">{{$ctrl.dataDTS.Beam_ID}}</small></div>
+        <div class="col-md-6"><b><small class="font-reduced">Latitude/QLast</small></b></div>
+        <div class="col-md-6"><small class="font-reduced">{{$ctrl.dataDTS.Lat}}</small></div>
+        <div class="col-md-6"><b><small class="font-reduced">Longitude/QLng</small></b></div>
+        <div class="col-md-6"><small class="font-reduced">{{$ctrl.dataDTS.Lng}}</small></div>
+        <div class="col-md-6"><b><small class="font-reduced">UL/DL Group</small></b></div>
+        <div class="col-md-6"><small class="font-reduced">{{$ctrl.dataDTS.ULDL_Group}}</small></div>
+        <div class="col-md-6"><b><small class="font-reduced">Antenna size</small></b></div>
+        <div class="col-md-6"><small class="font-reduced">{{$ctrl.dataDTS.Antenna_Size}}</small></div>
+        <div class="col-md-6"><b><small class="font-reduced">ODU Power</small></b></div>
+        <div class="col-md-6"><small class="font-reduced">{{$ctrl.dataDTS.ODU_Pwr}}</small></div>
+        <div class="col-md-6"><b><small class="font-reduced">Polarization</small></b></div>
+        <div class="col-md-6"><small class="font-reduced">{{$ctrl.dataDTS.Polarization}}</small></div>
+        <div class="col-md-6"><b><small class="font-reduced">Activation Date</small></b></div>
+        <div class="col-md-6"><small class="font-reduced">{{$ctrl.dataDTS.Activation_Date}}</small></div>
+      </div>
+      <div class="col-md-3">
+        <div class="col-md-6"><b><small class="font-reduced">Visit Type</small></b></div>
+        <div class="col-md-6"><small class="font-reduced">{{$ctrl.dataDTS.ULDL_Group}}</small></div>
+        <div class="col-md-6"><b><small class="font-reduced">FSO</small></b></div>
+        <div class="col-md-6"><small class="font-reduced">{{$ctrl.dataDTS.ULDL_Group}}</small></div>
+        <div class="col-md-6"><b><small class="font-reduced">Installer Name</small></b></div>
+        <div class="col-md-6"><small class="font-reduced">{{$ctrl.dataDTS.ULDL_Group}}</small></div>
+        <div class="col-md-6"><b><small class="font-reduced">Installer Id</small></b></div>
+        <div class="col-md-6"><small class="font-reduced">{{$ctrl.dataDTS.ULDL_Group}}</small></div>
+        <div class="col-md-6"><b><small class="font-reduced">Modem Temp</small></b></div>
+        <div class="col-md-6"><small class="font-reduced">{{$ctrl.dataDTS.Modem_Temp}}</small></div>
+        <div class="col-md-6"><b><small class="font-reduced">Reboot count</small></b></div>
+        <div class="col-md-6"><small class="font-reduced">xxxxxx</small></div>
+        <div class="col-md-6"><b><small class="font-reduced">Last Reboot Time</small></b></div>
+        <div class="col-md-6"><small class="font-reduced">xxxxxx</small></div>
+        <div class="col-md-6"><b><small class="font-reduced">Last Reboot Reason</small></b></div>
+        <div class="col-md-6"><small class="font-reduced">{{$ctrl.dataDTS.Last_Reboot_Reason}}</small></div>
+        <div class="col-md-6"><b><small class="font-reduced">SW Version</small></b></div>
+        <div class="col-md-6"><small class="font-reduced">{{$ctrl.dataDTS.SW_Version}}</small></div>
+        <div class="col-md-6"><b><small class="font-reduced">IDU ESN</small></b></div>
+        <div class="col-md-6"><small class="font-reduced">XXXXX</small></div>
+        <div class="col-md-6"><b><small class="font-reduced">ODU SN</small></b></div>
+        <div class="col-md-6"><small class="font-reduced">{{$ctrl.dataDTS.ODU_SN}}</small></div>
+      </div>
+      <div class="col-md-3">
+        <div class="col-md-6"><b><small class="font-reduced">UL Atten</small></b></div>
+        <div class="col-md-6"><small class="font-reduced">{{$ctrl.dataDTS.UL_Atten}}</small></div>
+        <div class="col-md-6"><b><small class="font-reduced">DL Atten</small></b></div>
+        <div class="col-md-6"><small class="font-reduced">{{$ctrl.dataDTS.DL_Atten}}</small></div>
+        <div class="col-md-6"><b><small class="font-reduced">UL Atten Offset</small></b></div>
+        <div class="col-md-6"><small class="font-reduced">{{$ctrl.dataDTS.UL_Atten_Offset}}</small></div>
+        <div class="col-md-6"><b><small class="font-reduced">DL Aften Offset</small></b></div>
+        <div class="col-md-6"><small class="font-reduced">{{$ctrl.dataDTS.DL_Atten_Offset}}</small></div>
+        <div class="col-md-6"><b><small class="font-reduced">Normalized UL Es/No</small></b></div>
+        <div class="col-md-6"><small class="font-reduced">{{$ctrl.dataDTS.Norm_UL_EsNo
+}}</small></div>
+        <div class="col-md-6"><b><small class="font-reduced">Normalized DL Es/No</small></b></div>
+        <div class="col-md-6"><small class="font-reduced">{{$ctrl.dataDTS.Norm_DL_EsNo
+}}</small></div>
+        <div class="col-md-6"><b><small class="font-reduced">Real-Time UL Es/No</small></b></div>
+        <div class="col-md-6"><small class="font-reduced">{{$ctrl.dataDTS.RT_UL_EsNo_Offset
+}}</small></div>
+        <div class="col-md-6"><b><small class="font-reduced">Real-Time DL Es/No</small></b></div>
+        <div class="col-md-6"><small class="font-reduced">{{$ctrl.dataDTS.RT_DL_EsNo_Offset}}</small></div>
+        <div class="col-md-8"><b><small class="font-reduced">Real-Time Stats Updated Date</small></b></div>
+        <div class="col-md-4"><small class="font-reduced">XXXXXX</small></div>
+        <div class="col-md-6"><b><small class="font-reduced">Real-Time Outrote Offset</small></b></div>
+        <div class="col-md-6"><small class="font-reduced">{{$ctrl.dataDTS.RT_Outroute_Offset}}</small></div>
+        <div class="col-md-6"><b><small class="font-reduced">Last Processed Date</small></b></div>
+        <div class="col-md-6"><small class="font-reduced">{{$ctrl.dataDTS.Last_Processed_Date}}</small></div>
+      </div>
+      <div class="col-md-3">
+        <div map-lazy-load="https://maps.google.com/maps/api/js">
+          <ng-map center="[-26.6875847,135.0857733]" style="height: 480px;" zoom="4">
+            <div ng-repeat="p in $ctrl.points">
+              <marker icon="{{$ctrl.customIcon}}" position="{{p.latitude}}, {{p.longitude}}"></marker>
+            </div>
+          </ng-map>
+        </div>
+      </div>
+
+    </div>
+    <div class="row">
+      <table class="table">
+        <thead>
+          <th></th>
+          <th>Timestamp</th>
+          <th>Operating UL Es/No</th>
+          <th>UL Margin</th>
+          <th>Symbol Rate-FEC</th>
+          <th>UL Es/No Avail</th>
+          <th>DL Es/No</th>
+          <th>MODCOD</th>
+          <th></th>
+
+        </thead>
+
+      </table>
+
+
+    </div>
+
+  </div>
+
+
+
+</div>
