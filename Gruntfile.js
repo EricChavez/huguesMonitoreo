@@ -78,14 +78,8 @@ module.exports = function(grunt) {
 			livereload: {
 				options: {
 					open: true,
-					middleware: function(connect, options, next) {
+					middleware: function(connect) {
 						return [
-							function(req, res, next) {
-								res.setHeader('Access-Control-Allow-Origin', '*');
-								res.setHeader('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-								res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-								return next();
-							},
 							connect.static('.tmp'),
 							connect().use(
 								'/bower_components',
