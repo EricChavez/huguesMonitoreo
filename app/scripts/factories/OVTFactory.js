@@ -1,7 +1,7 @@
 'use strict';
 angular
 	.module('huguesApp')
-	.factory('OVTFactory', function($http, $q, globalService) {
+	.factory('OVTFactory', function($http, $q, globalService, $localStorage) {
 		var factory = {};
 		var paths = {
 			GetToken: '/HuguesRequest/GetToken',
@@ -18,10 +18,13 @@ angular
 				'userId': credentials.userId,
 				'password': credentials.password,
 				'san': credentials.san
-
-			}
-			$http.post(globalService.getUrlHugues() + paths.GetOVTToken, parametros).then(function(response) {
-				deferred.resolve(response.data);
+			};
+			$http.post(globalService.getUrl() + paths.GetOVTToken, parametros).then(function(response) {
+				var token = JSON.parse(response.data[0].token);
+				$localStorage.currentData = {
+					token: token.token
+				};
+				deferred.resolve(token.token);
 			}).catch(function(response) {
 				deferred.reject(response.data);
 			});
@@ -35,8 +38,8 @@ angular
 				'url': obj.url,
 				'Jdata': obj.Jdata,
 				'method': obj.method
-			}
-
+			};
+			console.log(parametros);
 			$http.post(globalService.getUrlHugues() + paths.DataOVT,
 				parametros
 			).then(function(response) {
@@ -46,10 +49,6 @@ angular
 			});
 			return deferred.promise;
 		}
-
-
-
-
 
 		return factory;
 	});
