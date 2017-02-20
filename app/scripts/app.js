@@ -17,6 +17,7 @@ angular
 		'angular-loading-bar',
 		'ngNotify',
 		'ngMap',
+		'ui.bootstrap'
 		'ngStorage'
 	])
 	.config(['$provide', '$urlRouterProvider', '$httpProvider', 'cfpLoadingBarProvider', '$qProvider', function($provide, $urlRouterProvider, $httpProvider, cfpLoadingBarProvider, $qProvider) {
@@ -48,7 +49,6 @@ angular
 		$httpProvider.defaults.headers.post['Content-Type'] = 'application/json; charset=utf-8';
 		delete $httpProvider.defaults.headers.common['X-Requested-With'];
 	}])
-
 	.run(['$rootScope', '$state', '$stateParams', function($rootScope, $state, $stateParams) {
 		$rootScope.$state = $state;
 		$rootScope.$stateParams = $stateParams;
