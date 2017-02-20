@@ -5,11 +5,8 @@ angular
 		var factory = {};
 		var paths = {
 			GetToken: '/HuguesRequest/GetToken',
-			GetOVTToken: '/OVTtoken/GetTokenOVT',
-			GetOVTToken: '/OVTtoken/GetTokenOVT',
-			DataOVT: '/OVT/OvtPost',
-
-
+			GetOVTToken: '/OVTtoken/GetTokenOVT',			
+			DataOVT: '/OVT/OvtPost'
 		};
 
 		factory.OVTToken = function(credentials) {
@@ -29,7 +26,7 @@ angular
 				deferred.reject(response.data);
 			});
 			return deferred.promise;
-		}
+		};
 
 		factory.DataOVT = function(obj) {
 			var deferred = $q.defer();
@@ -39,7 +36,6 @@ angular
 				'Jdata': obj.Jdata,
 				'method': obj.method
 			};
-			console.log(parametros);
 			$http.post(globalService.getUrlHugues() + paths.DataOVT,
 				parametros
 			).then(function(response) {
@@ -48,7 +44,7 @@ angular
 				deferred.reject(response.data);
 			});
 			return deferred.promise;
-		}
+		};
 
 		return factory;
 	});
