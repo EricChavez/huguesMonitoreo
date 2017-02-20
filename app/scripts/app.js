@@ -16,9 +16,10 @@ angular
 		'blockUI',
 		'angular-loading-bar',
 		'ngNotify',
-		'ngMap'
+		'ngMap',
+		'ui.bootstrap'
 	])
-	.config(['$provide', '$urlRouterProvider', '$httpProvider', 'cfpLoadingBarProvider', '$qProvider', 'blockUIConfig', function($provide, $urlRouterProvider, $httpProvider, cfpLoadingBarProvider, $qProvider, blockUIConfig) {
+	.config(['$provide', '$urlRouterProvider', '$httpProvider', 'cfpLoadingBarProvider', '$qProvider', function($provide, $urlRouterProvider, $httpProvider, cfpLoadingBarProvider, $qProvider) {
 		$urlRouterProvider.otherwise('/main');
 		cfpLoadingBarProvider.includeSpinner = false;
 		$qProvider.errorOnUnhandledRejections(false);
@@ -49,7 +50,7 @@ angular
 		delete $httpProvider.defaults.headers.common['X-Requested-With'];
 	}])
 	.constant('APP_CONFIG', window.appConfig)
-	.run(['$rootScope', '$state', '$stateParams', '$location', function($rootScope, $state, $stateParams, $location) {
+	.run(['$rootScope', '$state', '$stateParams', '$location', function($rootScope, $state, $stateParams) {
 		$rootScope.$state = $state;
 		$rootScope.$stateParams = $stateParams;
 	}]);

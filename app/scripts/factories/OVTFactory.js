@@ -5,11 +5,8 @@ angular
 		var factory = {};
 		var paths = {
 			GetToken: '/HuguesRequest/GetToken',
-			GetOVTToken: '/OVTtoken/GetTokenOVT',
-			GetOVTToken: '/OVTtoken/GetTokenOVT',
-			DataOVT: '/OVT/OvtPost',
-
-
+			GetOVTToken: '/OVTtoken/GetTokenOVT',			
+			DataOVT: '/OVT/OvtPost'
 		};
 
 		factory.OVTToken = function(credentials) {
@@ -19,14 +16,14 @@ angular
 				'password': credentials.password,
 				'san': credentials.san
 
-			}
+			};
 			$http.post(globalService.getUrlHugues() + paths.GetOVTToken, parametros).then(function(response) {
 				deferred.resolve(response.data);
 			}).catch(function(response) {
 				deferred.reject(response.data);
 			});
 			return deferred.promise;
-		}
+		};
 
 		factory.DataOVT = function(obj) {
 			var deferred = $q.defer();
@@ -35,7 +32,7 @@ angular
 				'url': obj.url,
 				'Jdata': obj.Jdata,
 				'method': obj.method
-			}
+			};
 
 			$http.post(globalService.getUrlHugues() + paths.DataOVT,
 				parametros
@@ -45,7 +42,7 @@ angular
 				deferred.reject(response.data);
 			});
 			return deferred.promise;
-		}
+		};
 
 
 
