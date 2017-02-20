@@ -18,6 +18,7 @@ angular
 		'ngNotify',
 		'ngMap',
 		'ui.bootstrap'
+		'ngStorage'
 	])
 	.config(['$provide', '$urlRouterProvider', '$httpProvider', 'cfpLoadingBarProvider', '$qProvider', function($provide, $urlRouterProvider, $httpProvider, cfpLoadingBarProvider, $qProvider) {
 		$urlRouterProvider.otherwise('/main');
@@ -46,11 +47,9 @@ angular
 		});
 		$httpProvider.interceptors.push('ErrorHttpInterceptor');
 		$httpProvider.defaults.headers.post['Content-Type'] = 'application/json; charset=utf-8';
-		$httpProvider.defaults.headers.post['Accept'] = 'application/json';
 		delete $httpProvider.defaults.headers.common['X-Requested-With'];
 	}])
-	.constant('APP_CONFIG', window.appConfig)
-	.run(['$rootScope', '$state', '$stateParams', '$location', function($rootScope, $state, $stateParams) {
+	.run(['$rootScope', '$state', '$stateParams', function($rootScope, $state, $stateParams) {
 		$rootScope.$state = $state;
 		$rootScope.$stateParams = $stateParams;
 	}]);
