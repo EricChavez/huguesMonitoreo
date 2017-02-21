@@ -5,7 +5,7 @@ angular
 		function($uibModalInstance, $uibModal, token, OVTFactory, ngNotify) {
 
 			this.$onInit = function() {
-				console.log(token);
+
 				var objv = {};
 				objv.token = token;
 				objv.url = 'sign_off.json';
@@ -14,12 +14,32 @@ angular
 				OVTFactory.DataOVT(objv).then(function(data) {
 					var headers = JSON.parse(data);
 					vm.headers = headers;
-					vm.fso = headers.siteOrder.fso.
+					vm.fso = headers.siteOrder.fso;
 					vm.san = headers.san;
 					vm.visittype = headers.siteOrder.visitType;
-					console.log(headers);
-				});
 
+					var objmodel = {};
+					objmodel.token = token;
+					objmodel.url = 'install_sign_off/model.json';
+					objmodel.Jdata = '';
+					objmodel.method = 'OVTGET';
+					OVTFactory.DataOVT(objmodel).then(function(datamodel) {
+						vm.visittype = false;
+						vm.sight = false;
+						vm.modemsoftware = false;
+						vm.noinstallation = false;
+						vm.other = false;
+						vm.NOCC = false;
+						vm.dish = false;
+						vm.modem = false;
+						vm.power = false;
+						vm.radio = false;
+						vm.repaired = false;
+						vm.feedhorn = false;
+						vm.customersoft = false;
+						vm.DetailProblem = false;
+					});
+				});
 			}
 
 			function cancel() {
@@ -76,7 +96,7 @@ angular
 					"updatedDttm": null
 				};
 
-				console.log(data2);
+
 
 				var objv = {};
 				objv.token = token;
@@ -88,13 +108,10 @@ angular
 				OVTFactory.DataOVT(objv).then(function(data) {
 					if (data == "ERROR") {
 						ngNotify.set('The signoff installation cannot be performed', 'error');
-					} else if (data == "") {
-						console.log(data);
-						ngNotify.set('The signoff installation has been permormed successful', 'success');
+
 					} else {
 						var error = JSON.parse(data);
-						console.log(error);
-						ngNotify.set(error.errors[0], 'grimace');
+						ngNotify.set(error.message, 'grimace');
 					}
 				});
 			};
@@ -104,4 +121,18 @@ angular
 			var vm = this;
 			vm.cancel = cancel;
 			vm.SingOff = SingOff;
+			vm.visittype = false;
+			vm.sight = false;
+			vm.modemsoftware = false;
+			vm.noinstallation = false;
+			vm.other = false;
+			vm.NOCC = false;
+			vm.dish = false;
+			vm.modem = false;
+			vm.power = false;
+			vm.radio = false;
+			vm.repaired = false;
+			vm.feedhorn = false;
+			vm.customersoft = false;
+			vm.DetailProblem = false;
 		});
