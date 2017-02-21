@@ -8,17 +8,19 @@
  *
  * Main module of the application.
  */
-angular
-	.module('huguesApp', [
+angular.module('huguesApp', [
 		'ngAnimate',
 		'ngSanitize',
 		'ui.router',
 		'blockUI',
 		'angular-loading-bar',
 		'ngNotify',
+		'ngMap',
+		'ui.bootstrap',
+		'ngStorage'
 	])
-	.config(['$provide', '$urlRouterProvider', '$httpProvider', 'cfpLoadingBarProvider', '$qProvider', 'blockUIConfig', function($provide, $urlRouterProvider, $httpProvider, cfpLoadingBarProvider, $qProvider, blockUIConfig) {
-		$urlRouterProvider.otherwise('/');
+	.config(['$provide', '$urlRouterProvider', '$httpProvider', 'cfpLoadingBarProvider', '$qProvider', function($provide, $urlRouterProvider, $httpProvider, cfpLoadingBarProvider, $qProvider) {
+		$urlRouterProvider.otherwise('/main');
 		cfpLoadingBarProvider.includeSpinner = false;
 		$qProvider.errorOnUnhandledRejections(false);
 		$provide.factory('ErrorHttpInterceptor', function($q, $injector) {
@@ -46,8 +48,7 @@ angular
 		$httpProvider.defaults.headers.post['Content-Type'] = 'application/json; charset=utf-8';
 		delete $httpProvider.defaults.headers.common['X-Requested-With'];
 	}])
-	.constant('APP_CONFIG', window.appConfig)
-	.run(['$rootScope', '$state', '$stateParams', '$location', function($rootScope, $state, $stateParams, $location) {
+	.run(['$rootScope', '$state', '$stateParams', function($rootScope, $state, $stateParams) {
 		$rootScope.$state = $state;
 		$rootScope.$stateParams = $stateParams;
 	}]);
