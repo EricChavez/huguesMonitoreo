@@ -106,7 +106,7 @@ angular.module('huguesApp')
 				size: "lg",
 				resolve: {
 					token: function() {
-						return vm.OVTToken;
+						return vm.token;
 					}
 				}
 			});
@@ -139,56 +139,6 @@ angular.module('huguesApp')
 					vm.map = map;
 				});
 
-<<<<<<< HEAD
-			vm.OVT1 = false;
-			vm.OVT2 = true;
-
-
-
-
-			var d = "{" +
-				'"antennaSize"' +
-				':' +
-				vm.antenna +
-				',"mountType"' +
-				':' +
-				'"' + vm.mount + '"' +
-				'}';
-			var obj = {};
-			obj.token = vm.OVTToken;
-			obj.url = 'validate_antenna_mount.json';
-			obj.Jdata = d;
-			obj.method = 'OVTPOST';
-			OVTFactory.DataOVT(obj).then(function(data) {
-				var result = JSON.parse(data);
-				if (result.valid === true) {
-					vm.OVT1 = false;
-					vm.OVT2 = true;
-					var objv = {};
-					objv.token = vm.OVTToken;
-					objv.url = 'validation.json';
-					objv.Jdata = '';
-					objv.method = 'OVTGET';
-					OVTFactory.DataOVT(objv).then(function(data) {
-						console.log(data);
-						var DetailsOVT = JSON.parse(data);
-						vm.DetailsOVT2 = DetailsOVT;
-						vm.RecomendedDiag = vm.DetailsOVT2.diagnosis.recommendedAction.name;
-						vm.IdDiagnosis = vm.DetailsOVT2.diagnosis.recommendedAction.recommActionId;
-
-
-					});
-
-
-				} else {
-					ngNotify.set('The antenna size and Mount is not valid', 'error');
-
-					vm.OVT1 = true;
-					vm.OVT2 = false;
-				}
-			});
-=======
->>>>>>> develop
 
 				var auxMount = vm.mount.substring(0, vm.mount.length - 1);
 				var d = "{" +
@@ -254,14 +204,14 @@ angular.module('huguesApp')
 			OVTFactory.DataOVT(objv).then(function(data) {
 
 				if (data == "ERROR") {
-					ngNotify.set('The clear stats method cannot be performed', 'error');
+					ngNotify.set('The force range method cannot be performed', 'error');
 				} else if (data == "") {
 					console.log(data);
-					ngNotify.set('The clear stats method has been permormed successful', 'success');
+					ngNotify.set('The force range  method has been permormed successful', 'success');
 				} else {
 					var error = JSON.parse(data);
 					console.log(error);
-					ngNotify.set(error.errors[0], 'grimace');
+					ngNotify.set(data, 'grimace');
 				}
 			});
 		}
@@ -391,20 +341,5 @@ angular.module('huguesApp')
 		vm.Reboot = Reboot;
 		vm.CompleteAction = CompleteAction;
 		GetDetails();
-
-		vm.points = [{
-			"name": "Canberra",
-			"latitude": 'S2327.800/-23.6',
-			"longitude": 'W4700.640/-47'
-		}];
-
-		vm.customIcon = {
-			"scaledSize": [32, 32],
-			"url": "http://icons.iconarchive.com/icons/paomedia/small-n-flat/24/map-marker-icon.png"
-		};
-		NgMap.getMap().then(function(map) {
-			vm.map = map;
-			vm.map.refresh();
-		});
 
 	});

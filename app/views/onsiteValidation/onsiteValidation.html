@@ -1,6 +1,6 @@
 <style>
   .font-reduced {
-    font-size: 10px;
+    font-size: 13px;
   }
 
   .table>tfoot>tr>td {
@@ -182,7 +182,7 @@
   </div>
   <div class="card-body">
     <div class="row">
-      <div class="col-md-8 card">
+      <div class="col-md-12 card">
         <div class="card-body">
           <table class="table">
             <tbody>
@@ -370,10 +370,10 @@
           <button class="btn btn-success btn-xs" ng-click="$ctrl.CompleteAction();">Completed action</button>
         </div>
       </div>
-      <div class="col-md-4 card" ui-if="$ctrl.showmapa">
-         <ng-map center="[21.927982539177396, -102.29935909851838]" style="height:100%; width:100%;">
-              <marker icon="{{$ctrl.customIcon}}" position="{{$ctrl.points.latitude}}, {{$ctrl.points.longitude}}"></marker>
-          </ng-map>
+      <div class="col-md-12 card" ui-if="$ctrl.showmapa">
+        <ng-map center="[21.927982539177396, -102.29935909851838]" style="height:100%; width:100%;">
+          <marker icon="{{$ctrl.customIcon}}" position="{{$ctrl.points.latitude}}, {{$ctrl.points.longitude}}"></marker>
+        </ng-map>
       </div>
 
 
