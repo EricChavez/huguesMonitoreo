@@ -340,7 +340,7 @@
           <div class="col-md-8 col-md-offset-2" style="margin-top:-20px;">
             <p><strong>Diagnosis: </strong>{{ $ctrl.diagnosticData.Diagnosis }}</p>
             <p><strong>Recommended Action: </strong>{{ $ctrl.diagnosticData.Recommended_Action }}</p>
-            <p><button class="btn btn-sm btn-default">Completed Action</button></p>
+            <p><button class="btn btn-sm btn-default" ng-click="$ctrl.recommendedAction()">Completed Action</button></p>
             <p style="padding-left:20px;"><small>(Perform recommended action above, then click "Completed Action")</small></p>
           </div>
         </div>
@@ -358,15 +358,15 @@
       </div>
       <div id="table-info-1" class="collapse table-info" aria-expanded="false">
         <div class="col-md-12" style="margin-left:10px;">
-          <button class="btn btn-sm btn-default">Get Curren Stats</button>
-          <button class="btn btn-sm btn-default">Force Range</button>
-          <button class="btn btn-sm btn-default">Clear Terminal Stats</button>
-          <button class="btn btn-sm btn-default">Register</button>
-          <button class="btn btn-sm btn-default">Reload Tables</button>
-          <button class="btn btn-sm btn-default">Force Fallback</button>
-          <button class="btn btn-sm btn-default">Reboot</button>
-          <button class="btn btn-sm btn-default">Re-Associate</button>
-          <button class="btn btn-sm btn-default">Clear PEP Stats</button>
+          <button class="btn btn-sm btn-default" ng-click="$ctrl.acctionButtons('Current_Stats')">Get Curren Stats</button>
+          <button class="btn btn-sm btn-default" ng-click="$ctrl.acctionButtons('Force_range')">Force Range</button>
+          <button class="btn btn-sm btn-default" ng-click="$ctrl.acctionButtons('Clear_Term_Stats')">Clear Terminal Stats</button>
+          <button class="btn btn-sm btn-default" ng-click="$ctrl.acctionButtons('Reregister')">Register</button>
+          <button class="btn btn-sm btn-default" ng-click="$ctrl.acctionButtons('Reload_tables')">Reload Tables</button>
+          <button class="btn btn-sm btn-default" ng-click="$ctrl.acctionButtons('Force_fallback')">Force Fallback</button>
+          <button class="btn btn-sm btn-default" ng-click="$ctrl.acctionButtons('Reboot')">Reboot</button>
+          <button class="btn btn-sm btn-default" ng-click="$ctrl.acctionButtons('Reassociate')">Re-Associate</button>
+          <button class="btn btn-sm btn-default" ng-click="$ctrl.acctionButtons('Clear_PEP_Stats')">Clear PEP Stats</button>
         </div>
         <div class="col-md-12" style="padding-top:10px; padding-left:20px; padding-right:10px;">
           <table class="table table-bordered">
@@ -440,8 +440,61 @@
             </tbody>
           </table>
         </div>
+        <div class="col-md-12">
+          <div class="col-md-6" ng-if="$ctrl.diagnosticData.gw_weather != 'N/A'">
+            <div class="card">
+              <div class="card-body no-padding">
+                <div class="alert alert-callout alert-success no-margin" style="height: 150px;">
+                  <h1 class="pull-right text-success"><img src="https://icons.wxug.com/i/c/k/chanceflurries.gif" alt=""></h1>
+                  <strong class="text-md">Current Weather Conditions At Gateway</strong><br>
+                  <span class="opacity-50">{{ $ctrl.diagnosticData.gw_weather }}, {{ $ctrl.diagnosticData.gw_Temp_F }}</span><br>
+                  <span class="opacity-50">{{ $ctrl.diagnosticData.gw_rainfall_lasthr }}</span><br>
+                  <span class="opacity-50">{{ $ctrl.diagnosticData.gw_visibility }}</span><br>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6" ng-if="$ctrl.diagnosticData.Site_weather != 'N/A'">
+            <div class="card">
+              <div class="card-body no-padding">
+                <div class="alert alert-callout alert-success no-margin" style="height: 150px;">
+                  <h1 class="pull-right text-success"><img src="https://icons.wxug.com/i/c/k/chanceflurries.gif" alt=""></h1>
+                  <strong class="text-md">Current Weather Conditions At {{ $ctrl.diagnosticData.$ctrl.diagnosticData }}, {{ $ctrl.diagnosticData.$ctrl.Site_City }} </strong><br>
+                  <span class="opacity-50">{{ $ctrl.diagnosticData.Site_weather }}, {{ $ctrl.diagnosticData.gw_Temp_F }}</span><br>
+                  <span class="opacity-50">{{ $ctrl.diagnosticData.Site_rainfall_lasthr }}</span><br>
+                  <span class="opacity-50">{{ $ctrl.diagnosticData.Site_visibility }}</span><br>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6" ng-if="$ctrl.diagnosticData.gw_weather == 'N/A'" >
+            <div class="card">
+              <div class="card-body no-padding">
+                <div class="alert alert-callout alert-success no-margin" style="height: 150px;">
+                  <h1 class="pull-right text-success"><img src="https://icons.wxug.com/i/c/k/partlysunny.gif" alt=""></h1>
+                  <strong class="text-md">Current Weather Conditions At Gateway</strong><br>
+                  <span class="opacity-50">Mosttly Cloudy, 80.8F</span><br>
+                  <span class="opacity-50">RainFall - Last Hour --999.00"</span><br>
+                  <span class="opacity-50">Visibility: 10.0 Miles</span><br>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6" ng-if="$ctrl.diagnosticData.Site_weather == 'N/A'">
+            <div class="card">
+              <div class="card-body no-padding">
+                <div class="alert alert-callout alert-success no-margin" style="height: 150px;">
+                  <h1 class="pull-right text-success"><img src="https://icons.wxug.com/i/c/k/cloudy.gif" alt=""></h1>
+                  <strong class="text-md">Current Weather Conditions At S. Joaquim 1345, South Carolina </strong><br>
+                  <span class="opacity-50">Scattered Clouds, 57.4F</span><br>
+                  <span class="opacity-50">RainFall - Last Hour --999.00"</span><br>
+                  <span class="opacity-50">Visibility: 10.0 Miles</span><br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <!--end .panel -->
   </div>
 </div>
