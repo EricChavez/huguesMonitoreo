@@ -8,8 +8,7 @@
  *
  * Main module of the application.
  */
-angular
-	.module('huguesApp', [
+angular.module('huguesApp', [
 		'ngAnimate',
 		'ngSanitize',
 		'ui.router',
@@ -17,7 +16,7 @@ angular
 		'angular-loading-bar',
 		'ngNotify',
 		'ngMap',
-		'ui.bootstrap'
+		'ui.bootstrap',
 		'ngStorage'
 	])
 	.config(['$provide', '$urlRouterProvider', '$httpProvider', 'cfpLoadingBarProvider', '$qProvider', function($provide, $urlRouterProvider, $httpProvider, cfpLoadingBarProvider, $qProvider) {
