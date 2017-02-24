@@ -85,37 +85,6 @@
             <span class="title">OnSite Validation Tool 1</span>
           </a>
         </li>
-        <li ui-sref="home.onsiteTwo" ui-sref-active="active">
-          <a ui-sref="home.onsiteTwo" ui-sref-active="active">
-            <div class="gui-icon"><i class="fa fa-globe"></i></div>
-            <span class="title">OnSite Validation Tool 2</span>
-          </a>
-        </li>
-        <li class="gui-folder" ng-class="{active:$state.includes('cortes') || $state.includes('cortesEspeciales')}" ng-show="ctrl.isAdmin">
-          <a>
-            <div class="gui-icon"><i class="fa fa-newspaper-o"></i></div>
-            <span class="title">Reportes</span>
-          </a>
-          <!--start submenu -->
-          <ul style="overflow: hidden; height: 308px; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;">
-            <li><a ui-sref="cortes" ui-sref-active="active" ng-click="ctrl.ocultaNotify()"><span class="title">Cortes</span></a></li>
-            <li><a ui-sref="cortesEspeciales" ui-sref-active="active" ng-click="ctrl.ocultaNotify()"><span class="title">Cortes Sucursales Especiales</span></a></li>
-          </ul>
-          <!--end /submenu -->
-        </li>
-        <li class="gui-folder" ng-class="{active:$state.includes('procesos.*')}" ng-show="ctrl.isAdmin">
-          <a>
-            <div class="gui-icon"><i class="fa fa-tasks" aria-hidden="true"></i></div>
-            <span class="title">Procesos</span>
-          </a>
-          <!--start submenu -->
-          <ul style="overflow: hidden; height: 308px; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;">
-            <li><a ui-sref="procesos.desglose" ui-sref-active="active" ng-click="ctrl.ocultaNotify()"><span class="title">Desglose de Moneda</span></a></li>
-            <li><a ui-sref="procesos.entregas" ui-sref-active="active" ng-click="ctrl.ocultaNotify()"><span class="title">Entregas Parciales</span></a></li>
-            <li><a ui-sref="procesos.arqueo" ui-sref-active="active" ng-click="ctrl.ocultaNotify()"><span class="title">Arqueo de Cajas</span></a></li>
-          </ul>
-          <!--end /submenu -->
-        </li>
       </ul>
       <!--end .main-menu -->
       <!-- END MAIN MENU -->

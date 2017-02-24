@@ -93,7 +93,6 @@ angular.module('huguesApp')
 
 
 		function abrirSignOff() {
-			alert('click');
 			var modalInstance = $uibModal.open({
 				animation: true,
 				ariaLabelledBy: 'modal-title',
@@ -106,7 +105,7 @@ angular.module('huguesApp')
 				size: "lg",
 				resolve: {
 					token: function() {
-						return vm.token;
+						return vm.OVTToken;
 					}
 				}
 			});
@@ -165,7 +164,6 @@ angular.module('huguesApp')
 						objv.Jdata = '';
 						objv.method = 'OVTGET';
 						OVTFactory.DataOVT(objv).then(function(data) {
-							console.log(data);
 							var DetailsOVT = JSON.parse(data);
 							vm.DetailsOVT2 = DetailsOVT;
 							vm.RecomendedDiag = vm.DetailsOVT2.diagnosis.recommendedAction.name;
@@ -206,11 +204,9 @@ angular.module('huguesApp')
 				if (data == "ERROR") {
 					ngNotify.set('The force range method cannot be performed', 'error');
 				} else if (data == "") {
-					console.log(data);
 					ngNotify.set('The force range  method has been permormed successful', 'success');
 				} else {
 					var error = JSON.parse(data);
-					console.log(error);
 					ngNotify.set(data, 'grimace');
 				}
 			});
@@ -227,11 +223,9 @@ angular.module('huguesApp')
 				if (data == "ERROR") {
 					ngNotify.set('The clear stats method cannot be performed', 'error');
 				} else if (data == "") {
-					console.log(data);
 					ngNotify.set('The clear stats method has been permormed successful', 'success');
 				} else {
 					var error = JSON.parse(data);
-					console.log(error);
 					ngNotify.set(error.errors[0], 'grimace');
 				}
 
@@ -249,11 +243,9 @@ angular.module('huguesApp')
 				if (data == "ERROR") {
 					ngNotify.set('The reload tables method cannot be performed', 'error');
 				} else if (data == "") {
-					console.log(data);
 					ngNotify.set('The reload tables method has been permormed successful', 'success');
 				} else {
 					var error = JSON.parse(data);
-					console.log(error);
 					ngNotify.set(error.errors[0], 'grimace');
 				}
 
@@ -272,11 +264,10 @@ angular.module('huguesApp')
 				if (data == "ERROR") {
 					ngNotify.set('The force fallback method cannot be performed', 'error');
 				} else if (data == "") {
-					console.log(data);
 					ngNotify.set('The force fallback method has been  permormed successful', 'success');
 				} else {
 					var error = JSON.parse(data);
-					console.log(error);
+
 					ngNotify.set(error.errors[0], 'grimace');
 				}
 
@@ -293,11 +284,10 @@ angular.module('huguesApp')
 				if (data == "ERROR") {
 					ngNotify.set('The force reboot method cannot be performed', 'error');
 				} else if (data == "") {
-					console.log(data);
 					ngNotify.set('The reboot method has been  permormed successful', 'success');
 				} else {
 					var error = JSON.parse(data);
-					console.log(error);
+
 					ngNotify.set(error.errors[0], 'grimace');
 				}
 
@@ -315,11 +305,10 @@ angular.module('huguesApp')
 				if (data == "ERROR") {
 					ngNotify.set('The completed action method cannot be performed', 'error');
 				} else if (data == "") {
-					console.log(data);
 					ngNotify.set('The completed action method has been  permormed successful', 'success');
 				} else {
 					var error = JSON.parse(data);
-					console.log(error);
+
 					ngNotify.set(error.errors[0], 'grimace');
 				}
 
