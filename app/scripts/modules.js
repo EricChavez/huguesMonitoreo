@@ -37,8 +37,8 @@ angular.module('huguesApp')
 					pageTitle: 'BIENVENIDO | MONITOREO SOFTV',
 				},
 				url: '/onsite/two',
-				templateUrl: 'views/diagnostic/ValidationTool2.html',
-				controller: 'OVTctrl',
+				templateUrl: 'views/SanDetail/displayForSan.html',
+				controller: 'DisplayForSan',
 				controllerAs: '$ctrl'
 			}
 		];
